@@ -24,7 +24,7 @@ class ProductProvider with ChangeNotifier {
       id: 'p1',
       title: 'Men T-Shirt',
       description: 'Comfortable cotton t-shirt',
-      price: 25.0,
+      price: 2000.0,
       imageUrl:
       'https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?auto=format&fit=crop&w=800&q=60',
       categoryId: 'c1',
@@ -33,7 +33,7 @@ class ProductProvider with ChangeNotifier {
       id: 'p2',
       title: 'Women Dress',
       description: 'Elegant summer dress',
-      price: 45.0,
+      price: 3600.0,
       imageUrl:
       'https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=800&q=60',
       categoryId: 'c2',
@@ -42,7 +42,7 @@ class ProductProvider with ChangeNotifier {
       id: 'p3',
       title: 'Kids Toy',
       description: 'Safe and fun toy for kids',
-      price: 15.0,
+      price: 1200.0,
       imageUrl:
       'https://images.unsplash.com/photo-1537044374019-857d0e2d0a2f?auto=format&fit=crop&w=800&q=60',
       categoryId: 'c3',
@@ -51,7 +51,7 @@ class ProductProvider with ChangeNotifier {
       id: 'p4',
       title: 'Headphones',
       description: 'Wireless over-ear headphones',
-      price: 85.0,
+      price: 6800.0,
       imageUrl:
       'https://images.unsplash.com/photo-1518449071786-2f0f6e0ed82d?auto=format&fit=crop&w=800&q=60',
       categoryId: 'c5',
@@ -60,10 +60,18 @@ class ProductProvider with ChangeNotifier {
       id: 'p5',
       title: 'Sunglasses',
       description: 'Stylish UV protection sunglasses',
-      price: 30.0,
+      price: 2400.0,
       imageUrl:
       'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=60',
       categoryId: 'c4',
+    ),
+    Product(
+      id: 'p6',
+      title: 'Nike Air Shoes',
+      description: 'Comfortable running shoes',
+      price: 2800.0,
+      imageUrl: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=60',
+      categoryId: 'c6',
     ),
   ];
 

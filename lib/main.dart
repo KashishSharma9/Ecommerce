@@ -1,8 +1,6 @@
 
 import 'package:ecommereceapp/%20utils/theme.dart';
-import 'package:ecommereceapp/providers/address_provider.dart';
 import 'package:ecommereceapp/providers/auth_provider.dart';
-import 'package:ecommereceapp/providers/bank_account_provider.dart';
 import 'package:ecommereceapp/providers/home_provider.dart';
 import 'package:ecommereceapp/providers/navigation_provider.dart';
 import 'package:ecommereceapp/screens/auth/login_screen.dart';
@@ -34,8 +32,6 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => HomeProvider()),
         ChangeNotifierProvider(create: (_) => NavigationController()),
         ChangeNotifierProvider(create: (_) => NavigationProvider()),
-        ChangeNotifierProvider(create: (_) => AddressProvider()),
-        ChangeNotifierProvider(create: (_) => BankProvider()),
 
       ],
       child: MaterialApp(

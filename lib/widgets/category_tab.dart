@@ -26,7 +26,7 @@ class SCategoryTab extends StatelessWidget {
               //products
               SSectionHeading( title: 'You might like', showactionButton: true, onPressed: () {}),
               SizedBox(height: SSizes.spaceBtwItems,),
-              
+
               SGridLayout(itemCount: 4, itemBuilder: (_, index) => SProductCartVertical())
             ],
           ),

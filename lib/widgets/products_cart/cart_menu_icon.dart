@@ -3,18 +3,14 @@ import 'package:flutter/material.dart';
 import '../../ utils/constants/colors.dart';
 
 class SCartCounterIcon extends StatelessWidget {
-  const SCartCounterIcon({
-    super.key,
-    required this.OnPressed,
-    required this.iconColor  ,
-  });
-  final VoidCallback OnPressed;
+  const SCartCounterIcon(this.onPressed, this.iconColor, {super.key});
+  final VoidCallback onPressed;
   final Color iconColor;
   @override
   Widget build(BuildContext context) {
     return Stack(
       clipBehavior:Clip.none,
-        children:[ IconButton(onPressed: OnPressed, icon: Icon(Icons.shopping_bag, color: iconColor,)
+        children:[ IconButton(onPressed: onPressed, icon: Icon(Icons.shopping_bag, color: iconColor,)
     ),
       Positioned(
         right: 1,

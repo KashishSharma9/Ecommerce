@@ -1,3 +1,4 @@
+
 import 'package:ecommereceapp/%20utils/constants/image_strings.dart';
 import 'package:ecommereceapp/%20utils/constants/sizes.dart';
 import 'package:ecommereceapp/helpers/helper_function.dart';
@@ -8,6 +9,8 @@ import 'package:provider/provider.dart';
 import '../../ utils/constants/colors.dart';
 import '../../common/styles/shadows.dart';
 import '../../providers/navigation_provider.dart';
+import '../../providers/cart_provider.dart';
+import '../../providers/product_provider.dart';
 import '../custom_shapes/containers/rounded_container.dart';
 import '../icons/circular_icon.dart';
 
@@ -52,11 +55,11 @@ class SProductCartVertical extends StatelessWidget {
                 top: 0,
                   right:0,
                   child: SCircularIcon(icon: CupertinoIcons.heart_fill, color:Colors.red)),
-      
-      
+
+
                 ],
               ),
-      
+
             ),
             //details
             Padding(padding: const EdgeInsets.only(left: SSizes.Sm)),
@@ -67,7 +70,7 @@ class SProductCartVertical extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   maxLines: 2,
                   textAlign:TextAlign.left,
-      
+
                 ),
                 SizedBox(height: SSizes.spaceBtwItems/2,),
                 Row(
@@ -78,13 +81,13 @@ class SProductCartVertical extends StatelessWidget {
                     Icon (Icons.verified, color: SColors.primary ,size:SSizes.iconSm),
                   ],
                 ),
-      
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   //price
                   Text(
-                    '\$35.5',
+                    '₹2800',
                         maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.headlineSmall,
@@ -100,7 +103,20 @@ class SProductCartVertical extends StatelessWidget {
                     child: SizedBox(
                       width: SSizes.iconlg *1.2,
                         height: SSizes.iconlg *1.4,
-                        child: Center(child: const Icon(Icons.add, color: Colors.white))),
+                        child: Center(child: IconButton(
+                          icon: const Icon(Icons.add, color: Colors.white),
+                          onPressed: () {
+                            // Add to cart functionality
+                            final cartProvider = Provider.of<CartProvider>(context, listen: false);
+                            final productProvider = Provider.of<ProductProvider>(context, listen: false);
+                            // Assuming we add the first product for now, since widget is hardcoded
+                            final product = productProvider.products.firstWhere((p) => p.title == 'Nike Air Shoes');
+                            cartProvider.addItem(product);
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(content: Text('Added to cart')),
+                            );
+                          },
+                        ))),
                   )
                 ],
                 )
