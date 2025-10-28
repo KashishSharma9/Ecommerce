@@ -6,6 +6,11 @@ import '../../ utils/constants/colors.dart';
 import '../../widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../widgets/list_tiles/settings_menu_tile.dart';
 import '../../widgets/list_tiles/user_profile_tiles.dart';
+import '../profile/account_privacy_screen.dart';
+import '../profile/address_screen.dart';
+import '../profile/bank_details_screen.dart';
+import '../profile/coupons_screen.dart';
+import '../profile/notifications_screen.dart';
 import '../profile/profile_screen.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -45,13 +50,41 @@ class SettingsScreen extends StatelessWidget {
              SSectionHeading (title: 'Account Settings', showactionButton: false,),
                SizedBox(height: SSizes.spaceBtwItems,),
 
-               SSettingsMenuTile(icon: Icons.home_filled, title: 'My Addresses', subTitle:'Set shopping delivery address', onTap:(){}),
+               SSettingsMenuTile(icon: Icons.home_filled, title: 'My Addresses', subTitle:'Set shopping delivery address', onTap:(){
+                 Navigator.push(
+                   context,
+                   MaterialPageRoute(builder: (context) => const AddressScreen()),
+                 );
+               }),
                SSettingsMenuTile(icon: Icons.shopping_cart_outlined, title: 'My Cart', subTitle: 'Add, remove products and move to checkout'),
                SSettingsMenuTile(icon: Icons.shopping_bag_outlined, title: 'My Orders', subTitle: 'In-progress and Completed Orders'),
-               SSettingsMenuTile(icon: Icons.monetization_on_outlined, title: 'Bank Account',subTitle: 'Withdraw balance to registered bank account'),
-               SSettingsMenuTile(icon: Icons.discount_outlined, title: 'My Coupons', subTitle: 'List of all the discounted coupons'),
-               SSettingsMenuTile(icon: Icons.notifications_active_outlined, title: 'Notifications', subTitle: 'Set any kind of notification message'),
-               SSettingsMenuTile(icon: Icons.security_outlined, title: 'Account Privacy', subTitle: 'Manage data usage and connected accounts'),
+               SSettingsMenuTile(icon: Icons.monetization_on_outlined, title: 'Bank Account',subTitle: 'Withdraw balance to registered bank account',
+                 onTap:(){Navigator.push(
+                 context,
+                 MaterialPageRoute(
+                     builder: (context) => const BankDetailsScreen()),
+               );
+               },),
+               SSettingsMenuTile(icon: Icons.discount_outlined, title: 'My Coupons', subTitle: 'List of all the discounted coupons',onTap: () {
+                 Navigator.push(
+                   context,
+                   MaterialPageRoute(builder: (context) => const MyCouponsScreen()),
+                 );
+               },),
+               SSettingsMenuTile(icon: Icons.notifications_active_outlined, title: 'Notifications', subTitle: 'Set any kind of notification message',
+                   onTap:(){Navigator.push(
+                     context,
+                     MaterialPageRoute(
+                         builder: (context) => const NotificationsScreen()),
+                   );
+                   }),
+               SSettingsMenuTile(icon: Icons.security_outlined, title: 'Account Privacy', subTitle: 'Manage data usage and connected accounts',
+                   onTap:(){Navigator.push(
+                     context,
+                     MaterialPageRoute(
+                         builder: (context) => const AccountPrivacyScreen()),
+                   );
+                   }),
 
                // App Settings
                SizedBox(height: SSizes.spaceBtwSections),

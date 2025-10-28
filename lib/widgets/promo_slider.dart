@@ -10,24 +10,23 @@ import '../ utils/constants/sizes.dart';
 import 'custom_shapes/containers/circular_container.dart';
 
 class SPromoSlider extends StatelessWidget {
+  final List<Widget> items;
+
   const SPromoSlider({
-    super.key, required List<String> images,
+    super.key, required this.items,
   });
 
   @override
   Widget build(BuildContext context) {
     final controller = context.read<HomeProvider>();
+
     return Column(
       mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.center,
         children:[
           Center(
             child: CarouselSlider(
-                items: const [
-            SRoundedImage(imageurl: SImages.promoBanner3,),
-            SRoundedImage(imageurl: SImages.promoBanner3,),
-            SRoundedImage(imageurl: SImages.promoBanner3,),
-                    ],
+                items:items,
                     options: CarouselOptions(
             height: 200,
                     viewportFraction: 0.7,

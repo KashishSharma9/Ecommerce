@@ -12,6 +12,7 @@ import '../../widgets/image_texts_widgets/vertical_image_text.dart';
 import '../../widgets/layouts/grid_layout.dart';
 import '../../widgets/products_cart/cart_menu_icon.dart';
 import '../../widgets/promo_slider.dart';
+import '../../widgets/s_rounded_images.dart';
 import '../../widgets/texts/section_heading.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -84,7 +85,11 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.all(SSizes.defaultSpace),
               child: Column(
                 children: [
-                  SPromoSlider(images: [SImages.promoBanner1, SImages.promoBanner2, SImages.promoBanner3]),
+                  SPromoSlider( items:  [
+                      SRoundedImage(imageurl: SImages.promoBanner1),
+                  SRoundedImage(imageurl: SImages.promoBanner2),
+                  SRoundedImage(imageurl: SImages.promoBanner3),
+                ],),
                   SizedBox(height: SSizes.spaceBtwSections,),
                   //products
                   SGridLayout(itemCount: 10, itemBuilder: (_ , index )=>  SProductCartVertical()),

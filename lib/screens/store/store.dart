@@ -14,6 +14,7 @@ import '../../ utils/constants/colors.dart';
 import '../../ utils/constants/sizes.dart';
 import '../../helpers/helper_function.dart';
 import '../../widgets/products_cart/cart_menu_icon.dart';
+import '../../widgets/promo_slider.dart';
 
 class StoreScreen extends StatelessWidget {
   StoreScreen({super.key});
@@ -53,8 +54,6 @@ class StoreScreen extends StatelessWidget {
                 flexibleSpace: Padding(
                   padding: const EdgeInsets.all(SSizes.defaultSpace),
                   child: ListView(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
                     children: [
                       //search bar
                       SizedBox(height: SSizes.spaceBtwItems),
@@ -65,43 +64,20 @@ class StoreScreen extends StatelessWidget {
                         showBackground: true,
                       ),
                       SizedBox(height: SSizes.spaceBtwItems),
-                      //featured brands
-                      SSectionHeading(
-                        title: 'Featured Brands',
-                        onPressed: () {},
-                        textcolor: null,
-                      ),
                       const SizedBox(height: SSizes.spaceBtwItems / 1.5),
 
                       Column(
                         children: [
-                          Row(
-                            children: [
-                              Expanded(child: SBrandCard(showBorder: true)),
-                              SizedBox(width: SSizes.spaceBtwItems),
-                              Expanded(child: SBrandCard(showBorder: true)),
-                            ],
+                          //featured brands
+                          SPromoSlider(items: [SBrandCard(showBorder:true)],
                           ),
-                          SizedBox(height: SSizes.spaceBtwItems),
-                          Row(
-                            children: [
-                              Expanded(child: SBrandCard(showBorder: true)),
-                              SizedBox(width: SSizes.spaceBtwItems),
-                              Expanded(child: SBrandCard(showBorder: true)),
-                            ],
-                          ),
+                          SizedBox(height: SSizes.spaceBtwSections,),
+
                         ],
                       ),
 
                       SizedBox(height: SSizes.spaceBtwItems),
-                      // Brands GRID
-                      SGridLayout(
-                        itemCount: 2,
-                        mainAxisExtent: 80,
-                        itemBuilder: (_, index) {
-                          return const SBrandCard(showBorder: false);
-                        },
-                      ),
+
                     ],
                   ),
                 ),
