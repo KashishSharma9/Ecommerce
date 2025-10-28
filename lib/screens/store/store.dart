@@ -33,8 +33,8 @@ class StoreScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 20),
               child: SCartCounterIcon(
-                OnPressed: () {},
-                iconColor: dark ? Colors.white : Colors.black,
+                () {},
+                dark ? Colors.white : Colors.black,
               ),
             ),
           ], showbackarrow: false,

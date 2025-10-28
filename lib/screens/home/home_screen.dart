@@ -1,8 +1,9 @@
-import 'package:ecommereceapp/%20utils/constants/sizes.dart';
+ import 'package:ecommereceapp/%20utils/constants/sizes.dart';
 import 'package:ecommereceapp/%20utils/constants/text_strings.dart';
 import 'package:ecommereceapp/widgets/appbar/appbar.dart';
 import 'package:ecommereceapp/widgets/products_cart/product_cart_vertical.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../ utils/constants/colors.dart';
 import '../../ utils/constants/image_strings.dart';
 import '../../navigation_menu.dart';
@@ -13,6 +14,8 @@ import '../../widgets/layouts/grid_layout.dart';
 import '../../widgets/products_cart/cart_menu_icon.dart';
 import '../../widgets/promo_slider.dart';
 import '../../widgets/texts/section_heading.dart';
+import '../../providers/product_provider.dart';
+import '../cart/cart_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -50,7 +53,7 @@ class HomeScreen extends StatelessWidget {
                         actions: [
                           Padding(
                             padding: const EdgeInsets.only(right: 20),
-                            child: SCartCounterIcon(OnPressed: () {  }, iconColor: SColors.white,),
+                            child: SCartCounterIcon(() { Navigator.push(context, MaterialPageRoute(builder: (_) => const CartScreen())); }, SColors.white),
                           ),
                         ], showbackarrow: false,
                 ),

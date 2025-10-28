@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../ utils/constants/sizes.dart';
 import '../products_cart/product_cart_vertical.dart';
+import '../../providers/product_provider.dart';
+
 class SGridLayout extends StatelessWidget {
   const SGridLayout({
     super.key,
@@ -27,6 +29,6 @@ class SGridLayout extends StatelessWidget {
           crossAxisSpacing: SSizes.gridViewSpacing,
           mainAxisExtent: 288,
         ),
-        itemBuilder: (_, index) => SProductCartVertical());
+        itemBuilder: itemBuilder);
   }
 }
