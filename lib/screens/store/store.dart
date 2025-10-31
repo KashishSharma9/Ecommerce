@@ -9,6 +9,7 @@ import 'package:ecommereceapp/widgets/custom_shapes/containers/search_container.
 import 'package:ecommereceapp/widgets/layouts/grid_layout.dart';
 import 'package:ecommereceapp/widgets/texts/section_heading.dart';
 import 'package:flutter/material.dart';
+import '../cart/cart_screen.dart';
 
 import '../../ utils/constants/colors.dart';
 import '../../ utils/constants/sizes.dart';
@@ -33,12 +34,15 @@ class StoreScreen extends StatelessWidget {
           actions: [
             Padding(
               padding: const EdgeInsets.only(right: 20),
-              child: SCartCounterIcon(
-                () {},
-                dark ? Colors.white : Colors.black,
-              ),
+              child: SCartCounterIcon(() {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const CartScreen()),
+                );
+              }, dark ? Colors.white : Colors.black),
             ),
-          ], showbackarrow: false,
+          ],
+          showbackarrow: false,
         ),
         body: NestedScrollView(
           headerSliverBuilder: (_, innerBoxIsScrolled) {
