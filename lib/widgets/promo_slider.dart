@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../ utils/constants/colors.dart';
-import '../ utils/constants/image_strings.dart';
+
 import '../ utils/constants/sizes.dart';
 import 'custom_shapes/containers/circular_container.dart';
 
@@ -28,7 +28,7 @@ class SPromoSlider extends StatelessWidget {
             child: CarouselSlider(
                 items:items,
                     options: CarouselOptions(
-            height: 200,
+            height: 150,
                     viewportFraction: 0.7,
                 enlargeCenterPage: true,
                 onPageChanged: (index, _) {
@@ -37,21 +37,6 @@ class SPromoSlider extends StatelessWidget {
                     )),
           ),
           SizedBox(height: SSizes.spaceBtwItems,),
-            Consumer<HomeProvider>(
-              builder: (context, controller, child) {
-                return Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  for(int i = 0; i < 3; i++)
-                 SCircularContainer(width: 20, height: 4,
-                     backgroundColor: controller.carousalCurrentIndex== i
-                         ? SColors.primary : SColors.grey
-                   ),
-               ],
-            );
-           }
-           )
         ]
     );
   }

@@ -78,7 +78,6 @@ class ProfileScreen extends StatelessWidget {
                       child: const Text('Close Account', style: TextStyle(color: Colors.red))
                   ),
                 ),
-              ),
             ],
           ),
         ),

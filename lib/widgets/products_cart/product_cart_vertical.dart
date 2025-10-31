@@ -8,13 +8,16 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../ utils/constants/colors.dart';
 import '../../common/styles/shadows.dart';
+import '../../models/product.dart';
 import '../../providers/navigation_provider.dart';
 import '../../providers/cart_provider.dart';
 import '../../providers/product_provider.dart';
+import '../../providers/wishlist_provider.dart';
 import '../custom_shapes/containers/rounded_container.dart';
 import '../icons/circular_icon.dart';
 
 class SProductCartVertical extends StatelessWidget {
+
   const SProductCartVertical ({super.key});
 
   @override
@@ -51,12 +54,44 @@ class SProductCartVertical extends StatelessWidget {
                     ),
                   ),
                   //fav. Icon button
-              Positioned(
-                top: 0,
-                  right:0,
-                  child: SCircularIcon(icon: CupertinoIcons.heart_fill, color:Colors.red)),
+                  // fav. Icon button
+                  Positioned(
+                    top: 9,
+                    right: 12,
+                    child: Consumer<WishlistProvider>(
+                      builder: (context, wishlistProvider, child) {
+                        // Example product — in your real list, use the actual product object
+                        final product = Product(
+                          id: '1',
+                          title: 'Nike Air Shoes',
+                          price: 2800, imageUrl: SImages.producutImage3,
+                        );
 
+                        final isInWishlist = wishlistProvider.isWishlisted(product);
 
+                        return Positioned(
+                          top: -1,
+                          right:-2,
+                          child: SCircularIcon(
+                            icon: isInWishlist
+                                ? CupertinoIcons.heart_fill
+                                : CupertinoIcons.heart, // filled if in wishlist
+                            color: isInWishlist ? Colors.red : Colors.grey,
+                            onPressed: () {
+                              wishlistProvider.toggleWishlist(product);
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(isInWishlist
+                                      ? 'Removed from favorites ❤️‍🔥'
+                                      : 'Added to favorites ❤️'),
+                                ),
+                              );
+                            },
+                          ),
+                        );
+                      },
+                    ),
+                  ),
                 ],
               ),
 

@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             SPrimaryHeaderContainer(
-              size: 400,
+              size: 390,
               child: Column(
                 children: [
                    SAppBar(
@@ -89,13 +89,13 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   SPromoSlider( items:  [
-                      SRoundedImage(imageurl: SImages.promoBanner1),
-                  SRoundedImage(imageurl: SImages.promoBanner2),
+                      SRoundedImage(imageurl: SImages.promoBanner3),
+                  SRoundedImage(imageurl: SImages.promoBanner3),
                   SRoundedImage(imageurl: SImages.promoBanner3),
                 ],),
                   SizedBox(height: SSizes.spaceBtwSections,),
                   //products
-                  SGridLayout(itemCount: 10, itemBuilder: (_ , index )=>  SProductCartVertical()),
+                  SGridLayout(itemCount: 5, itemBuilder: (_ , index )=>  SProductCartVertical()),
 
                 ],
               ),

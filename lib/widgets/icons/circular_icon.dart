@@ -11,9 +11,8 @@ class SCircularIcon extends StatelessWidget {
     this.width,
     this.height,
     this.size = SSizes.lg,
-    this.onPressed,
     this.color,
-    this.backgroundColor,
+    this.backgroundColor, this.onPressed,
   });
 
   final double? width, height, size;
@@ -24,19 +23,21 @@ class SCircularIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container (
-      height: 40,
-      width: 40,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius. circular (100),
-        color: backgroundColor != null
-            ? backgroundColor!
-        : SHelperFunctions.isDarkMode(context)
-          ?SColors.black.withOpacity(0.9)
-            :SColors.white.withOpacity(0.9),
+    return GestureDetector(
+      child: Container (
+        height: 40,
+        width: 40,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius. circular (100),
+          color: backgroundColor != null
+              ? backgroundColor!
+          : SHelperFunctions.isDarkMode(context)
+            ?SColors.black.withOpacity(0.9)
+              :SColors.white.withOpacity(0.9),
 
+        ),
+        child: IconButton(onPressed:onPressed ,icon: Icon(icon, color: color,)),
       ),
-      child: IconButton(onPressed: (){} ,icon: Icon(icon, color: color,)),
     );
   }
 }

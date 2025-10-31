@@ -50,10 +50,10 @@ class StoreScreen extends StatelessWidget {
               SliverAppBar(
                 pinned: true,
                 floating: true,
-                expandedHeight: 440,
+                expandedHeight: 350,
                 automaticallyImplyLeading: false,
                 backgroundColor: SHelperFunctions.isDarkMode(context)
-                    ? SColors.black
+                    ? SColors.dark
                     : SColors.white,
                 flexibleSpace: Padding(
                   padding: const EdgeInsets.all(SSizes.defaultSpace),
