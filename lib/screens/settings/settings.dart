@@ -1,4 +1,12 @@
 import 'package:ecommereceapp/%20utils/constants/sizes.dart';
+import 'package:ecommereceapp/screens/cart/cart_screen.dart';
+import 'package:ecommereceapp/screens/profile/account_privacy_screen.dart';
+import 'package:ecommereceapp/screens/profile/address_screen.dart';
+import 'package:ecommereceapp/screens/profile/bank_details_screen.dart';
+import 'package:ecommereceapp/screens/profile/coupons_screen.dart';
+import 'package:ecommereceapp/screens/profile/notifications_screen.dart';
+import 'package:ecommereceapp/screens/profile/order_detail_screen.dart';
+import 'package:ecommereceapp/screens/profile/orders_screen.dart';
 import 'package:ecommereceapp/widgets/appbar/appbar.dart';
 import 'package:ecommereceapp/widgets/texts/section_heading.dart';
 import 'package:flutter/material.dart';
@@ -45,13 +53,62 @@ class SettingsScreen extends StatelessWidget {
              SSectionHeading (title: 'Account Settings', showactionButton: false,),
                SizedBox(height: SSizes.spaceBtwItems,),
 
-               SSettingsMenuTile(icon: Icons.home_filled, title: 'My Addresses', subTitle:'Set shopping delivery address', onTap:(){}),
-               SSettingsMenuTile(icon: Icons.shopping_cart_outlined, title: 'My Cart', subTitle: 'Add, remove products and move to checkout'),
-               SSettingsMenuTile(icon: Icons.shopping_bag_outlined, title: 'My Orders', subTitle: 'In-progress and Completed Orders'),
-               SSettingsMenuTile(icon: Icons.monetization_on_outlined, title: 'Bank Account',subTitle: 'Withdraw balance to registered bank account'),
-               SSettingsMenuTile(icon: Icons.discount_outlined, title: 'My Coupons', subTitle: 'List of all the discounted coupons'),
-               SSettingsMenuTile(icon: Icons.notifications_active_outlined, title: 'Notifications', subTitle: 'Set any kind of notification message'),
-               SSettingsMenuTile(icon: Icons.security_outlined, title: 'Account Privacy', subTitle: 'Manage data usage and connected accounts'),
+               SSettingsMenuTile(icon: Icons.home_filled, title: 'My Addresses', subTitle:'Set shopping delivery address',
+                   onTap:(){
+                     Navigator.push(
+                       context,
+                       MaterialPageRoute(
+                           builder: (context) => const AddressScreen()),);
+
+               }),
+               SSettingsMenuTile(icon: Icons.shopping_cart_outlined, title: 'My Cart', subTitle: 'Add, remove products and move to checkout',
+                   onTap:(){
+                     Navigator.push(
+                       context,
+                       MaterialPageRoute(
+                           builder: (context) => const CartScreen()),);
+
+                   }),
+               SSettingsMenuTile(icon: Icons.shopping_bag_outlined, title: 'My Orders', subTitle: 'In-progress and Completed Orders',
+                   onTap:(){
+                     Navigator.push(
+                       context,
+                       MaterialPageRoute(
+                           builder: (context) => const OrdersScreen()),);
+
+                   }),
+               SSettingsMenuTile(icon: Icons.monetization_on_outlined, title: 'Bank Account',subTitle: 'Withdraw balance to registered bank account',
+                   onTap:(){
+                     Navigator.push(
+                       context,
+                       MaterialPageRoute(
+                           builder: (context) => const BankDetailsScreen()),);
+
+                   }),
+               SSettingsMenuTile(icon: Icons.discount_outlined, title: 'My Coupons', subTitle: 'List of all the discounted coupons',
+                   onTap:(){
+                     Navigator.push(
+                       context,
+                       MaterialPageRoute(
+                           builder: (context) => const MyCouponsScreen()),);
+
+                   }),
+               SSettingsMenuTile(icon: Icons.notifications_active_outlined, title: 'Notifications', subTitle: 'Set any kind of notification message',
+                   onTap:(){
+                     Navigator.push(
+                       context,
+                       MaterialPageRoute(
+                           builder: (context) => const NotificationsScreen()),);
+
+                   }),
+               SSettingsMenuTile(icon: Icons.security_outlined, title: 'Account Privacy', subTitle: 'Manage data usage and connected accounts',
+                   onTap:(){
+                     Navigator.push(
+                       context,
+                       MaterialPageRoute(
+                           builder: (context) => const AccountPrivacyScreen()),);
+
+                   }),
 
                // App Settings
                SizedBox(height: SSizes.spaceBtwSections),

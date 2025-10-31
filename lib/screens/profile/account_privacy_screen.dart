@@ -42,7 +42,7 @@ class _AccountPrivacyScreenState extends State<AccountPrivacyScreen> {
 
           // ✅ Visibility & Notification Toggles
           Card(
-            color: dark ? SColors.darkGrey : Colors.white,
+            color: dark ? SColors.grey : Colors.white,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),
@@ -85,7 +85,7 @@ class _AccountPrivacyScreenState extends State<AccountPrivacyScreen> {
                   onChanged: (val) {
                     setState(() => twoStepVerification = val);
                   },activeColor: SColors.primary,
-                  inactiveTrackColor:  SColors.grey,
+                  inactiveTrackColor:  SColors.darkGrey,
                   title: const Text("Enable 2-step verification"),
                   secondary: const Icon(Icons.verified_user_outlined),
                 ),
@@ -103,7 +103,7 @@ class _AccountPrivacyScreenState extends State<AccountPrivacyScreen> {
           const SizedBox(height: SSizes.spaceBtwItems),
 
           Card(
-            color: dark ? SColors.darkGrey : Colors.white,
+            color:  dark ? SColors.grey : Colors.white,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),
@@ -158,7 +158,7 @@ class _AccountPrivacyScreenState extends State<AccountPrivacyScreen> {
           ),
           const SizedBox(height: SSizes.spaceBtwItems),
           Card(
-            color: dark ? SColors.darkGrey : Colors.white,
+            color: dark ? SColors.grey : Colors.white,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),

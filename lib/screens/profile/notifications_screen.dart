@@ -50,7 +50,7 @@ class NotificationsScreen extends StatelessWidget {
             final notification = notifications[index];
             return Container(
               decoration: BoxDecoration(
-                color: dark ? SColors.darkGrey : Colors.white,
+                color: dark ? SColors.grey : Colors.white,
                 borderRadius: BorderRadius.circular(SSizes.cardRadiusMd),
                 boxShadow: [
                   if (!dark)

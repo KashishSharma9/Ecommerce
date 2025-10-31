@@ -59,9 +59,7 @@ class MyCouponsScreen extends StatelessWidget {
                     margin: const EdgeInsets.only(
                         bottom: SSizes.spaceBtwItems),
                     decoration: BoxDecoration(
-                      color: dark
-                          ? SColors.darkGrey.withOpacity(0.7)
-                          : Colors.white,
+                      color: dark ? SColors.grey : Colors.white,
                       borderRadius:
                       BorderRadius.circular(SSizes.cardRadiusMd),
                       boxShadow: [
