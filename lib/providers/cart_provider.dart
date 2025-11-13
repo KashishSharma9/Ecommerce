@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'product_provider.dart'; // Import Product model
+import '../models/product.dart';
+import '../models/cart.dart' as cart_model;
+import '../services/cart_services.dart';
 
 class CartItem {
   final String id; // Unique cart item id
@@ -37,7 +39,7 @@ class CartProvider with ChangeNotifier {
       // If item already in cart, increase quantity
       _items.update(
         product.id,
-            (existingItem) => CartItem(
+        (existingItem) => CartItem(
           id: existingItem.id,
           productId: existingItem.productId,
           title: existingItem.title,
@@ -48,7 +50,7 @@ class CartProvider with ChangeNotifier {
     } else {
       _items.putIfAbsent(
         product.id,
-            () => CartItem(
+        () => CartItem(
           id: DateTime.now().toString(),
           productId: product.id,
           title: product.title,
@@ -70,7 +72,7 @@ class CartProvider with ChangeNotifier {
     if (_items[productId]!.quantity > 1) {
       _items.update(
         productId,
-            (existingItem) => CartItem(
+        (existingItem) => CartItem(
           id: existingItem.id,
           productId: existingItem.productId,
           title: existingItem.title,

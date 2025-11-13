@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/order.dart';
+import '../models/cart.dart' as cart_model;
+import '../services/order_services.dart';
 import 'cart_provider.dart';
 
 class OrderProvider with ChangeNotifier {
